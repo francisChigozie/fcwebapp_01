@@ -198,8 +198,11 @@ router.get('/formAnimal', function (req, res) {
 }); 
 
 //book.html
-router.get('/animal', function (req, res) {
-      res.sendFile(path.join(__dirname, '/html/list.html'))
+router.get('/backdev', function (req, res) {
+      res.sendFile(path.join(__dirname, '/html/backdev.html'))
+}); 
+router.get('/ooprog', function (req, res) {
+    res.sendFile(path.join(__dirname, '/html/oop.html'))
 }); 
 router.post('/handleForm', (req, res) => {
 
@@ -214,7 +217,7 @@ router.post('/handleForm', (req, res) => {
 
 ////////////////////////////////////////////
 
-router.get('/book', function (req, res) {
+router.get('/bookform', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/bookform.html'))
 }); 
 
@@ -357,11 +360,11 @@ router.get('/hotel', function (req, res) {
       res.sendFile(path.join(__dirname, '/hotel/hotel.html'))
 }); 
 
-router.get('/hotelabout', function (req, res) {
+router.get('/hotel/about', function (req, res) {
       res.sendFile(path.join(__dirname, '/hotel/about.html'))
 }); 
 
-router.get('/hotelcontact', async function(req, res) {
+router.get('/hotel/contact', async function(req, res) {
       res.sendFile(path.join(__dirname, '/hotel/contact.html'))
 
       const hotelcontact = await  Hotelcontact.find();
@@ -373,6 +376,7 @@ router.get('/hotelcontact', async function(req, res) {
 }); 
 
  router.post('/hotelcontact', (asyncHandler(async (req, res, next) => {
+         // res.setHeader('X-Foo', 'bar')
     const {email} = req.body;
            sendmail(email)
     try{
@@ -415,15 +419,15 @@ router.get('/frankfurt', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/index.html'))
 }); 
 
-router.get('/frankfurtblog', function (req, res) {
+router.get('/frankfurt/blog', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/blog.html'))
 }); 
 
-router.get('/frankfurtpost1', function (req, res) {
+router.get('/frankfurt/post1', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/post1.html'))
 }); 
 
-router.get('/frankfurtpost2', function (req, res) {
+router.get('/frankfurt/post2', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/post2.html'))
 }); 
 
@@ -432,7 +436,7 @@ router.get('/hambuger', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/hambuger.html'))
 }); 
 
-router.get('/frankfurtpost3', function (req, res) {
+router.get('/frankfurt/post3', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/post3.html'))
 }); 
 
@@ -442,7 +446,7 @@ router.get('/knowledge', function (req, res) {
 }); 
 
 // Other Satatic Designs
-router.get('/staticdesign', function (req, res) {
+router.get('/satdesign', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/sdesign.html'))
 }); 
 
@@ -455,6 +459,22 @@ router.get('/presentation', function (req, res) {
 router.get('/dropdown', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/dropdown.html'))
 }); 
+
+// Object-Oriented-Programming 
+//JAVA
+router.get('/java', function (req, res) {
+    res.sendFile(path.join(__dirname, '/obj-ori-pro/java.html'))
+});
+
+//PYTHON
+router.get('/python', function (req, res) {
+    res.sendFile(path.join(__dirname, '/obj-ori-pro/python.html'))  
+});
+
+//NODE
+router.get('/node', function (req, res) {
+    res.sendFile(path.join(__dirname, '/obj-ori-pro/node.html'))    
+});
 
 //404 PAGE
 router.get(/*default*/ (req, res) => {

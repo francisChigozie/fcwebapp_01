@@ -1,0 +1,18 @@
+h1,
+.min-num,
+.max-num {
+    color: yellow;
+}
+
+.container {
+    text-align: center;
+}
+.message{
+    margin-top: 20px;
+}
+
+.container{
+    text-align: center;
+    background: fixed;
+    background-color: darkgrey;
+}
