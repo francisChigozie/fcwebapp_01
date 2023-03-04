@@ -36,7 +36,7 @@ const PORT = process.env.PORT || 4001
 app.set('view engine', 'ejs');
 
 app.use(cors({
-    origin: "https://fcwebapp05.herokuapp.com/" //or your netlify domain 
+    origin: "https://fcwebapp01.herokuapp.com/" //or your netlify domain 
 }))
 /* app.use(cors({
     origin: "https://www.chigoziefrancis-portfolio.dev/dist/"
