@@ -16,7 +16,7 @@ var authorSchema = new Schema({
 var bookSchema = new Schema({
     title: {type: String, 
         required: [true, 'Please add the year of publication'],
-         unique: [true, 'Sorry ! This title is already published ']},
+         unique: [false, 'Sorry ! This title is already published ']},
     year: {
         type: Number,
         required: [true, 'Please add year']

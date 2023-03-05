@@ -198,11 +198,8 @@ router.get('/formAnimal', function (req, res) {
 }); 
 
 //book.html
-router.get('/backdev', function (req, res) {
-      res.sendFile(path.join(__dirname, '/html/backdev.html'))
-}); 
-router.get('/ooprog', function (req, res) {
-    res.sendFile(path.join(__dirname, '/html/oop.html'))
+router.get('/animal', function (req, res) {
+      res.sendFile(path.join(__dirname, '/html/list.html'))
 }); 
 router.post('/handleForm', (req, res) => {
 
@@ -217,7 +214,7 @@ router.post('/handleForm', (req, res) => {
 
 ////////////////////////////////////////////
 
-router.get('/bookform', function (req, res) {
+router.get('/book', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/bookform.html'))
 }); 
 
@@ -232,7 +229,7 @@ router.post('/createbook', asyncHandler(async(req, res, next) => {
     newBook.save( (err) => {
         if (err) {
             res.type('html').status(500);
-            res.send('Error:', err);
+            res.send('Sorry ! This is already published:', err);
         }else{
              res.render('createdbook', {book: newBook});
         }
@@ -360,11 +357,11 @@ router.get('/hotel', function (req, res) {
       res.sendFile(path.join(__dirname, '/hotel/hotel.html'))
 }); 
 
-router.get('/hotel/about', function (req, res) {
+router.get('/hotelabout', function (req, res) {
       res.sendFile(path.join(__dirname, '/hotel/about.html'))
 }); 
 
-router.get('/hotel/contact', async function(req, res) {
+router.get('/hotelcontact', async function(req, res) {
       res.sendFile(path.join(__dirname, '/hotel/contact.html'))
 
       const hotelcontact = await  Hotelcontact.find();
@@ -376,7 +373,6 @@ router.get('/hotel/contact', async function(req, res) {
 }); 
 
  router.post('/hotelcontact', (asyncHandler(async (req, res, next) => {
-         // res.setHeader('X-Foo', 'bar')
     const {email} = req.body;
            sendmail(email)
     try{
@@ -419,15 +415,15 @@ router.get('/frankfurt', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/index.html'))
 }); 
 
-router.get('/frankfurt/blog', function (req, res) {
+router.get('/frankfurtblog', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/blog.html'))
 }); 
 
-router.get('/frankfurt/post1', function (req, res) {
+router.get('/frankfurtpost1', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/post1.html'))
 }); 
 
-router.get('/frankfurt/post2', function (req, res) {
+router.get('/frankfurtpost2', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/post2.html'))
 }); 
 
@@ -436,7 +432,7 @@ router.get('/hambuger', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/hambuger.html'))
 }); 
 
-router.get('/frankfurt/post3', function (req, res) {
+router.get('/frankfurtpost3', function (req, res) {
       res.sendFile(path.join(__dirname, '/frankfurt/post3.html'))
 }); 
 
@@ -448,6 +444,16 @@ router.get('/knowledge', function (req, res) {
 // Other Satatic Designs
 router.get('/satdesign', function (req, res) {
       res.sendFile(path.join(__dirname, '/html/sdesign.html'))
+}); 
+
+// BackDev
+router.get('/backdev', function (req, res) {
+      res.sendFile(path.join(__dirname, '/html/devop.html'))
+}); 
+
+// OOPROG
+router.get('/ooprog', function (req, res) {
+      res.sendFile(path.join(__dirname, '/html/oop.html'))
 }); 
 
 //Presentation
