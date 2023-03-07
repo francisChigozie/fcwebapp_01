@@ -16,3 +16,11 @@
     text-align: center;
     background-color: lightgray;
 }
+
+.srch-form{
+    color: black;
+}
+
+.srch-txt{
+    border: 10px;
+}

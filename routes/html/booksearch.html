@@ -17,18 +17,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded"><br>
-                <h1 class="animal-form">Search For A Book</h1>
+                <h1 class="srch-form">Search For A Book</h1>
                 <form action="./search" method="POST" class="animal-form"><br>
 
-                    <label for="title">Title :</label> <input name="title"
+                    <label class="srch-form" for="title">Title :</label> <input name="title"
                     required>
                     <p><br>
                 
-                        <label for="author" class="author">Author name :</label> <input name="name"
+                        <label for="author" class="srch-form">Author name :</label> <input name="name"
                         required>
                     </p><br>
                 
-                    <label for="year" class="year"> Year :</label> <input name="year"
+                    <label for="year" class="srch-form"> Year :</label> <input name="year"
                     required>
                     <p><br>
                 
@@ -37,11 +37,11 @@
                         <input type="radio" name="which" value="any">Any
                     </p><br><br>
                 
-                    <input type="submit" value="Search">
+                    <input type="submit" value="Search" class="srch-form btn">
                 
                 </form>
                 <br><br><br>
-                <a href="/backdev">Back</a>
+                <a href="/backdev" class="srch-form btn">Back</a>
             </div>
         </div>
     </div>
